@@ -2,8 +2,9 @@
 Contributors: kpumuk
 Tags: code, snippet, syntax, highlight, highlighting, color, geshi
 Requires at least: 4.0
-Tested up to: 6.2.2
-Stable tag: 0.10.1
+Requires PHP: 7.0
+Tested up to: 6.9.4
+Stable tag: 0.10.2
 
 CodeColorer is a syntax highlighting plugin which allows inserting code snippets into blog posts. The plugin supports color themes, code samples in RSS, comments.
 
@@ -172,6 +173,11 @@ Yes. We do not store or process any user information.
 
 == Changelog ==
 
+= 0.10.2 =
+* Fixed stored XSS in shortcode attributes, including comment-rendered shortcodes.
+* Improved compatibility coverage across supported PHP and WordPress versions with real WordPress integration tests.
+* Modernized local development, CI, and release tooling for more reliable maintenance.
+
 = 0.10.1 (May 28, 2023) =
 * Addressed a script injection in custom CSS classes and custom CSS block.
 
@@ -226,6 +232,13 @@ Sources of this plugin are available both in SVN and Git:
 
 * [WordPress SVN repository](https://plugins.svn.wordpress.org/codecolorer/)
 * [GitHub](https://github.com/kpumuk/codecolorer/)
+
+The GitHub repository includes local contributor tooling based on `mise`, Composer, `pnpm`, and `wp-env`. A typical setup is:
+
+1. `mise install`
+2. `mise run bootstrap`
+3. `mise run test`
+4. `mise run wp-start`
 
 Feel free to check them out, make your changes and send me patches or pull requests. Promise, I will apply every patch (of course, if they add a value to the product). Email for patches, suggestions, or bug reports: [kpumuk@kpumuk.info](mailto:kpumuk@kpumuk.info).
 
